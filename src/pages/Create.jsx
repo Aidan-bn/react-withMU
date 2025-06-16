@@ -1,8 +1,10 @@
-import { Button, Container, TextField, Typography } from "@mui/material"
+import { Button, Container, TextField, Typography, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from "@mui/material"
 //import { makeStyles } from '@mui/styles';
 //import DeleteIcon from '@mui/icons-material/Delete';
-import { AccessAlarmOutlined, SendAndArchiveRounded } from "@mui/icons-material";
+import { AccessAlarmOutlined, RadioButtonChecked, SendAndArchiveRounded } from "@mui/icons-material";
 import { useState } from "react";
+import { Form } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 // const useStyles = makeStyles({
 //     btn: {
@@ -15,9 +17,28 @@ import { useState } from "react";
 
 
 const Create = () => {
-   // const classes = useStyles();
    const [title, setTitle] = useState('')
    const [description, setdescription] = useState('')
+   const [category, setCategory] = useState('sport')
+  const navigate = useNavigate()
+
+   const handleSubmit = (e) => {
+        e.preventDefault()
+        if(title && description && category)
+        //localStorage.setItem('note', JSON.stringify({title, description, category}))
+        
+        fetch('http://localhost:8000/notes', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({title, description, category})
+        })
+        .then(res => res.json())
+        .then(data => {
+          navigate('/notes')
+        })
+   }
 
   return (
     <Container>
@@ -44,30 +65,38 @@ const Create = () => {
          fullWidth
          onChange={(e) => setdescription(e.target.value)}
         />
-        
+        <FormControl style={{marginTop: 20, marginBottom: 20, display: "block"}}>
+        <FormLabel>Note category</FormLabel>
+        <RadioGroup>
+          <FormControlLabel
+            value="coding"
+            onChange={(e) => setCategory(e.target.value)}
+            control={<Radio />}
+            label="coding"
+          />
+          <FormControlLabel
+            value="health"
+            onChange={(e) => setCategory(e.target.value)}
+            control={<Radio />}
+            label="health"
+          />
+          <FormControlLabel
+            value="sport"
+            onChange={(e) => setCategory(e.target.value)}
+            control={<Radio />}
+            label="sport"
+          />
+        </RadioGroup>
+        </FormControl>
         <Button
-    //    style={{
-    //     fontSize: '1.5rem', 
-    //     backgroundColor: 'primary', 
-    //     color: 'white',
-    //     '&:hover': {
-    //         backgroundColor: 'pink',
-    //         color: 'yellow'
-    //     }}}
        variant="contained"
        type="submit"
-       onClick={(e) => {
-            e.preventDefault()
-            if(title && description)
-            alert('Am clicked ' + title + description)
-        }}
+       onClick={handleSubmit}
        endIcon={<SendAndArchiveRounded /> }
        >
         Submit
       </Button>
       </form>
-      
-
       </Container>
   )
 }

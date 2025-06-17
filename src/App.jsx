@@ -3,31 +3,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Create from './pages/Create'
 import Notes from './pages/Notes'
 import Nav from './pages/Nav'
-// import {createMuiTheme, ThemProvider} from "@mui/material";
-
-// const theme = createMuiTheme({
-//     Palette: {
-//         primary: {
-//             main: '#1976d2',
-//         },
-//         secondary: {
-//             main: '#dc004e',
-//         },
-//     }
-// })
+import Layout from './components/Layout'
 
 function App() {
   return (
     <>
-      {/* <ThemProvider theme={theme}> */}
       <BrowserRouter>
-        <Nav />
+      <Layout>
         <Routes>
+          <Route path='/' element={<Nav />} />
           <Route path="/create" element={<Create />} />
           <Route path="/notes" element={<Notes />} />
         </Routes>
+      </Layout>
       </BrowserRouter>
-      {/* </ThemProvider> */}
     </>
   )
 }

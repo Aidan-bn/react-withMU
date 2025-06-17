@@ -1,20 +1,8 @@
 import { Button, Container, TextField, Typography, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from "@mui/material"
-//import { makeStyles } from '@mui/styles';
-//import DeleteIcon from '@mui/icons-material/Delete';
-import { AccessAlarmOutlined, RadioButtonChecked, SendAndArchiveRounded } from "@mui/icons-material";
+import { SendAndArchiveRounded } from "@mui/icons-material";
 import { useState } from "react";
 import { Form } from "react-router";
 import { useNavigate } from "react-router-dom";
-
-// const useStyles = makeStyles({
-//     btn: {
-//         fontSize: '1.5rem',
-//         backgroundColor: 'blue',
-//         color: 'white',
-//     }
-// })
-
-
 
 const Create = () => {
    const [title, setTitle] = useState('')
@@ -25,7 +13,6 @@ const Create = () => {
    const handleSubmit = (e) => {
         e.preventDefault()
         if(title && description && category)
-        //localStorage.setItem('note', JSON.stringify({title, description, category}))
         
         fetch('http://localhost:8000/notes', {
           method: 'POST',
@@ -45,6 +32,7 @@ const Create = () => {
       <Typography 
         noWrap
         color="primary"
+        variant="h5"
         >
         Create a new note
       </Typography>

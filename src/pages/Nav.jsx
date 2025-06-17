@@ -1,13 +1,16 @@
 
-import { Link } from 'react-router-dom'
-
 const Nav = () => {
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/create">Create</Link>
-        <Link to="/notes">Notes</Link>
+      <nav
+      style={{
+        color: '#010109',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '1.5rem',
+      }}>
+        App for note creation and management
       </nav>
     </>
   )

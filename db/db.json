@@ -1,22 +1,22 @@
 {
   "notes": [
     {
-      "id": "1",
-      "title": "Note 1",
-      "description": "This is the description for note 1.",
+      "id": "9d89",
+      "title": "JavaScript",
+      "description": "A multipurpose language to create a robust of application now days which solve a number of issues",
       "category": "coding"
     },
     {
-      "id": "3",
-      "title": "Note 3",
-      "description": "This is the description for note 3.",
+      "id": "c203",
+      "title": "Busket ball",
+      "description": "Atleast I know the NBS league from Ngara",
       "category": "sport"
     },
     {
-      "id": "1852",
-      "title": "Activities",
-      "description": "Tommorrow I have to go out",
-      "category": "sport"
+      "id": "796a",
+      "title": "Reading",
+      "description": "The same book repeat it twice for your understanding",
+      "category": "coding"
     }
   ]
 }

@@ -1,25 +1,16 @@
 import { DeleteOutlineOutlined } from "@mui/icons-material";
 import { Card, CardContent, CardHeader, Grid, IconButton, Paper } from "@mui/material";
 
-const NoteCard = ({ note }) => {
-    const handleDelete = () => {
-        fetch(`http://localhost:8000/notes/${note.id}`, {
-            method: 'DELETE'
-        })
-        .then((id) => {
-            console.log('Note deleted successfully:', id);
+const NoteCard = ({ note, handleDelete }) => {
 
-        })
-        .catch(err => console.error('Error deleting note:', err));
-    }
-  return (
+    return (
     <div>
       <Card>
         <CardHeader
-        action={
+          action={
             <IconButton>
                 <DeleteOutlineOutlined
-                onClick={handleDelete} />
+                onClick={() => handleDelete(note.id)} />
             </IconButton>
         }
         title={note.title}

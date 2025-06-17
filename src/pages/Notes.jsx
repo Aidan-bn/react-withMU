@@ -10,6 +10,19 @@ const Notes = () => {
       .then(res => res.json())
       .then(data => setStoredNotes(data))
   }, [])
+
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`http://localhost:8000/notes/${id}`, {
+        method: 'DELETE'
+      })
+     const updatedNotes = storedNotes.filter(note => note.id !== id)
+      setStoredNotes(updatedNotes)
+      console.log('Note deleted successfully:', id)
+    } catch (err) {
+      console.error('Error deleting note:', err)
+    }
+  }
   
   return (
     <Container>
@@ -18,7 +31,7 @@ const Notes = () => {
       <Grid container spacing={2} style={{ marginTop: 20 }}>
         {storedNotes.map(note => (
           <Grid key={note.id} >
-            <NoteCard note={note} />
+            <NoteCard note={note} handleDelete={handleDelete} />
           </Grid>
         ))}
       </Grid>

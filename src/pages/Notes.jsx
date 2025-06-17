@@ -1,4 +1,4 @@
-import { Container, Grid, Paper } from "@mui/material"
+import { Container, Grid, Paper, Typography } from "@mui/material"
 import { useEffect, useState } from "react"
 import NoteCard from "./NoteCard"
 
@@ -27,7 +27,13 @@ const Notes = () => {
   return (
     <Container>
     <div>
-      <h1>Notes Page</h1>
+      <Typography 
+        noWrap
+        color="primary"
+        variant="h5"
+        >
+        View all notes
+      </Typography>
       <Grid container spacing={2} style={{ marginTop: 20 }}>
         {storedNotes.map(note => (
           <Grid key={note.id} >

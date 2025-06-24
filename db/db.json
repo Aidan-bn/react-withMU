@@ -23,6 +23,12 @@
       "title": "See Doctor motto",
       "description": "I wanna see doctor Motto for health checkup",
       "category": "health"
+    },
+    {
+      "id": "f3ab",
+      "title": "Cooking",
+      "description": "Makande and Ugali is all I ilke",
+      "category": "health"
     }
   ]
 }

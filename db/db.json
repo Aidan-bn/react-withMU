@@ -1,0 +1,34 @@
+{
+  "notes": [
+    {
+      "id": "9d89",
+      "title": "JavaScript",
+      "description": "A multipurpose language to create a robust of application now days which solve a number of issues",
+      "category": "coding"
+    },
+    {
+      "id": "c203",
+      "title": "Busket ball",
+      "description": "Atleast I know the NBS league from Ngara",
+      "category": "sport"
+    },
+    {
+      "id": "796a",
+      "title": "Reading",
+      "description": "The same book repeat it twice for your understanding",
+      "category": "coding"
+    },
+    {
+      "id": "2c31",
+      "title": "See Doctor motto",
+      "description": "I wanna see doctor Motto for health checkup",
+      "category": "health"
+    },
+    {
+      "id": "f3ab",
+      "title": "Cooking",
+      "description": "Makande and Ugali is all I ilke",
+      "category": "health"
+    }
+  ]
+}
